@@ -211,6 +211,5 @@ C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingAppl
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\obj\Debug\CS350_BaggingApplication.csproj.AssemblyReference.cache
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\obj\Debug\CS350_BaggingApplication.csproj.CoreCompileInputs.cache
-C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\obj\Debug\CS350_BaggingApplication.csproj.CopyComplete
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\obj\Debug\CS350_BaggingApplication.dll
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\obj\Debug\CS350_BaggingApplication.pdb
