@@ -1,0 +1,28 @@
+﻿@model CS350_BaggingApplication.ViewModels.ItemViewModel
+@{
+    ViewBag.Title = "Items";
+}
+
+<h2>Items</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Quantity</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
