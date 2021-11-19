@@ -180,6 +180,9 @@ legend {
 textarea {
   overflow: auto;
 }
+.adminbutton {
+    width: 100%;
+}
 optgroup {
   font-weight: bold;
 }

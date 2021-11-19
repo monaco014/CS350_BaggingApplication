@@ -254,6 +254,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
+    <Content Include="Views\Home\AdministratorMenu.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
