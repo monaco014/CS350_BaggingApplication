@@ -12,8 +12,8 @@
         </div>
         <div class="col-md-4">
             <h2>ManageInventory</h2>
-            <button id="addItems" class="adminbutton" href=""><img src="https://img.icons8.com/ios-filled/100/000000/open-box.png" />Add Items</button>
-            <button id="modifyStock" class="adminbutton" href=""><img src="https://img.icons8.com/ios-filled/100/000000/warehouse-1.png" />Manage Stock</button>
+            <button id="addItems" class="adminbutton" onclick="location.href='@Url.Action("newItem", "admin")'"><img src="https://img.icons8.com/ios-filled/100/000000/open-box.png" />Add Items</button>
+            <button id="modifyStock" class="adminbutton" onclick="location.href='@Url.Action("Index", "item")'"><img src="https://img.icons8.com/ios-filled/100/000000/warehouse-1.png" />Manage Stock</button>
         </div>
         <div class="col-md-4">
             <h2>BaggingSystem</h2>

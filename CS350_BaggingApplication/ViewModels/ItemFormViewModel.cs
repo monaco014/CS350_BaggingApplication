@@ -16,22 +16,41 @@ namespace CS350_BaggingApplication.ViewModels
         
         public string Description { get; set; }
 
-        [Required]
-        public IEnumerable<ContainerType> Container { get; set; }
 
         [Required]
-        public int X { get; set; }
+        public int Length { get; set; }
         
         [Required]
-        public int Y { get; set; }
+        public int Height { get; set; }
         
         [Required]
-        public int Z { get; set; }
-        
+        public int Width { get; set; }
+
+        [Required]
+        public int Weight { get; set; }
+
         [Required]
         public int Quantity { get; set; }
         
         [Required]
         public int Price { get; set; }
+
+        public ItemFormViewModel()
+        {
+
+        }
+
+        public ItemFormViewModel(Item item)
+        {
+            Id = item.Id;
+            Name = item.Name;
+            Description = item.Description;
+            Length = item.Length;
+            Height = item.Height;
+            Width = item.Width;
+            Weight = item.Weight;
+            Quantity = item.Quantity;
+            Price = item.Price;
+        }
     }
 }

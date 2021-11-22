@@ -176,17 +176,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111111838394_Initial Migration.cs" />
-    <Compile Include="Migrations\202111111838394_Initial Migration.designer.cs">
-      <DependentUpon>202111111838394_Initial Migration.cs</DependentUpon>
+    <Compile Include="Migrations\202111222012204_InitialDatabase.cs" />
+    <Compile Include="Migrations\202111222012204_InitialDatabase.designer.cs">
+      <DependentUpon>202111222012204_InitialDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111111900077_Add Item.cs" />
-    <Compile Include="Migrations\202111111900077_Add Item.designer.cs">
-      <DependentUpon>202111111900077_Add Item.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111222234248_ItemModel.cs" />
-    <Compile Include="Migrations\202111222234248_ItemModel.designer.cs">
-      <DependentUpon>202111222234248_ItemModel.cs</DependentUpon>
+    <Compile Include="Migrations\202111222014006_AddWeightToItem.cs" />
+    <Compile Include="Migrations\202111222014006_AddWeightToItem.designer.cs">
+      <DependentUpon>202111222014006_AddWeightToItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -264,8 +260,9 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\NewItem.cshtml" />
+    <Content Include="Views\Admin\CreatedItem.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -280,14 +277,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111111838394_Initial Migration.resx">
-      <DependentUpon>202111111838394_Initial Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111222012204_InitialDatabase.resx">
+      <DependentUpon>202111222012204_InitialDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111111900077_Add Item.resx">
-      <DependentUpon>202111111900077_Add Item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111222234248_ItemModel.resx">
-      <DependentUpon>202111222234248_ItemModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111222014006_AddWeightToItem.resx">
+      <DependentUpon>202111222014006_AddWeightToItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
