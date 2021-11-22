@@ -6,6 +6,7 @@ namespace CS350_BaggingApplication.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Item> Items { get; set; }
+        public DbSet<Packaging> Packaging { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -53,5 +53,34 @@ namespace CS350_BaggingApplication.Controllers
             return View();
         }
 
+        public ActionResult NewPackaging()
+        {
+            var model = new ItemFormViewModel()
+            {
+                Id = 0
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult SavePackaging(Packaging pack)
+        {
+            if (!ModelState.IsValid)
+            {
+                var model = new PackagingFormViewModel(pack);
+                return View("NewItem", model);
+            }
+
+            _context.Packaging.Add(pack);
+            _context.SaveChanges();
+
+            return View("CreatedPackaging");
+        }
+
+        public ActionResult CreatedPackaging()
+        {
+            return View();
+        }
+
     }
 }
