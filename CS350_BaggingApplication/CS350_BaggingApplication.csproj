@@ -183,6 +183,10 @@
     <Compile Include="Migrations\202111111900077_Add Item.designer.cs">
       <DependentUpon>202111111900077_Add Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111222234248_ItemModel.cs" />
+    <Compile Include="Migrations\202111222234248_ItemModel.designer.cs">
+      <DependentUpon>202111222234248_ItemModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -193,6 +197,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ItemFormViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111111900077_Add Item.resx">
       <DependentUpon>202111111900077_Add Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111222234248_ItemModel.resx">
+      <DependentUpon>202111222234248_ItemModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
