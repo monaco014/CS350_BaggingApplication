@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CS350_BaggingApplication.Controllers
 {
+    [Authorize]
     public class ItemController : Controller
     {
         ApplicationDbContext _context;
