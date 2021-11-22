@@ -55,7 +55,7 @@ namespace CS350_BaggingApplication.Controllers
 
         public ActionResult NewPackaging()
         {
-            var model = new ItemFormViewModel()
+            var model = new PackagingFormViewModel()
             {
                 Id = 0
             };
@@ -68,7 +68,7 @@ namespace CS350_BaggingApplication.Controllers
             if (!ModelState.IsValid)
             {
                 var model = new PackagingFormViewModel(pack);
-                return View("NewItem", model);
+                return View("Newpackaging", model);
             }
 
             _context.Packaging.Add(pack);
