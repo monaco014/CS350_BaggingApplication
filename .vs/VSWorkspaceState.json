@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CS350_BaggingApplication",
+    "\\CS350_BaggingApplication\\App_Data",
+    "\\CS350_BaggingApplication\\Models"
   ],
   "SelectedNode": "\\CS350_BaggingApplication.sln",
   "PreviewInSolutionExplorer": false
