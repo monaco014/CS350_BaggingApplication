@@ -20,6 +20,12 @@ namespace CS350_BaggingApplication.Controllers
             return View();
         }
 
+        public ActionResult AdministratorMenu()
+        {
+            ViewBag.Message = "Administrators only.";
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
