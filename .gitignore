@@ -383,3 +383,9 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+.vs/VSWorkspaceState.json
+.vs/CS350_BaggingApplication/config/applicationhost.config
+.vs/CS350_BaggingApplication/v16/.suo
+
+CS350_BaggingApplication/bin/
+CS350_BaggingApplication/obj/Debug/
