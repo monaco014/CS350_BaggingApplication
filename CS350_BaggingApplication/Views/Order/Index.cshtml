@@ -1,0 +1,33 @@
+﻿@model CS350_BaggingApplication.ViewModels.CalculateOrderViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("CalculateOrder", "Order"))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td><input id="Quantities" name="Quantities" type="number" value="0"/></td>
+                </tr>
+                }
+        </tbody>
+    </table>
+
+<button class="btn btn-primary">Calculate</button>
+}
+
