@@ -1,0 +1,39 @@
+﻿@model CS350_BaggingApplication.ViewModels.PackagingViewModel
+@{
+    ViewBag.Title = "BaggingOptions";
+}
+
+<h2>BaggingOptions</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Stored Bagging Types</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Max Weight</th>
+                    <th>Item Limit</th>
+                    <th>Dimentions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pack in Model.Packaging)
+                {
+                    <tr>
+                        <td>@pack.Name</td>
+                        <td>@pack.WeightCapacity</td>
+                        <td>@pack.HardItemLimit</td>
+                        <td>@pack.Height X @pack.Width X @pack.Length</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <h2>BaggingSystemOptions</h2>
+    </div>
+    <div class="col-md-4">
+        <h2>BaggingSystem</h2>
+    </div>
+</div>

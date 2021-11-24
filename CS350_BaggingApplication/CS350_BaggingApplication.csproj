@@ -170,6 +170,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaggingOptionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Models\Packaging.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\PackagingViewModel.cs" />
     <Compile Include="ViewModels\ItemFormViewModel.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\PackagingFormViewModel.cs" />
@@ -270,6 +272,7 @@
     <Content Include="Views\Admin\CreatedItem.cshtml" />
     <Content Include="Views\Admin\NewPackaging.cshtml" />
     <Content Include="Views\Admin\CreatedPackaging.cshtml" />
+    <Content Include="Views\BaggingOption\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -294,6 +297,9 @@
     <EmbeddedResource Include="Migrations\202111222159424_Packaging.resx">
       <DependentUpon>202111222159424_Packaging.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
