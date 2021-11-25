@@ -1,0 +1,29 @@
+﻿@model CS350_BaggingApplication.ViewModels.CalculateOrderResultViewModel
+
+@{
+    ViewBag.Title = "CalculateOrder";
+}
+
+<h2>CalculateOrder</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.Key.Name</td>
+                <td>@item.Value</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Packaging used: @Model.PackagingUsed.Name</h3>
+<p>Bags needed: @Model.BagsNeeded</p>
