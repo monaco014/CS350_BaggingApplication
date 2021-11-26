@@ -1,6 +1,5 @@
 ﻿using CS350_BaggingApplication.Models;
 using CS350_BaggingApplication.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -42,27 +41,19 @@ namespace CS350_BaggingApplication.Controllers
                 return View();
             }
 
-            // This is actually the dumbest way to make a dictionary of the quantity of each item from the form, but I can't get anything else to work at the moment
-            var items = _context.Items.ToList();
-            var unsortedDict = new Dictionary<Item, int>();
-            for (int i = 0; i < items.Count; i++)
-            {
-                unsortedDict.Add(items[i], quantities[i]);
-            }
-            var dict = new Dictionary<Item, int>();
-            foreach (var item in unsortedDict)
-            {
-                if (item.Value > 0)
-                    dict.Add(item.Key, item.Value);
-            }
-
-            // Bagging algorithm goes here
-
+            Dictionary<Item, int> dict = ConvertToItemQuantityDictionary(quantities);
             Packaging packagingType = _context.Packaging.First();
-            int neededBags = GetNumberOfNeededBags(dict, packagingType);
+
+            IBaggingAlgorithm baggingAlgorithm = new SimpleBaggingAlgorithm();
+            int neededBags = baggingAlgorithm.GetNumberOfNeededBags(dict, packagingType);
+
+            int totalWeight = GetTotalWeight(dict);
+            int totalItems = GetTotalItems(dict);
 
             var model = new CalculateOrderResultViewModel
             {
+                TotalItems = totalItems,
+                TotalWeight = totalWeight,
                 Items = dict,
                 PackagingUsed = packagingType,
                 BagsNeeded = neededBags
@@ -71,20 +62,51 @@ namespace CS350_BaggingApplication.Controllers
             return View(model);
         }
 
-        private static int GetNumberOfNeededBags(Dictionary<Item, int> dict, Packaging type)
+        private static int GetTotalWeight(Dictionary<Item, int> dict)
         {
-            var totalItems = 0;
-            var totalWeight = 0;
+            int totalWeight = 0;
+            foreach (var item in dict)
+            {
+                if (item.Value != 0)
+                {
+                    totalWeight += item.Key.Weight;
+                }
+            }
+
+            return totalWeight;
+        }
+
+        private static int GetTotalItems(Dictionary<Item, int> dict)
+        {
+            int totalItems = 0;
             foreach (var item in dict)
             {
                 if (item.Value != 0)
                 {
                     totalItems += item.Value;
-                    totalWeight += item.Key.Weight;
                 }
             }
 
-            return 5;
+            return totalItems;
+        }
+
+        private Dictionary<Item, int> ConvertToItemQuantityDictionary(List<int> quantities)
+        {
+            var items = _context.Items.ToList();
+            var unsortedDict = new Dictionary<Item, int>();
+            for (int i = 0; i < items.Count; i++)
+            {
+                unsortedDict.Add(items[i], quantities[i]);
+            }
+
+            var sortedDict = new Dictionary<Item, int>();
+            foreach (var item in unsortedDict)
+            {
+                if (item.Value > 0)
+                    sortedDict.Add(item.Key, item.Value);
+            }
+
+            return sortedDict;
         }
     }
 

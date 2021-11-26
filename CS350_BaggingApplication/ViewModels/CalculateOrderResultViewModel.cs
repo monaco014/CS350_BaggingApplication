@@ -10,6 +10,8 @@ namespace CS350_BaggingApplication.ViewModels
     {
         public Dictionary<Item, int> Items { get; set; }
         public Packaging PackagingUsed { get; set; }
+        public int TotalWeight { get; set; }
+        public int TotalItems { get; set; }
         public int BagsNeeded { get; set; }
     }
 }

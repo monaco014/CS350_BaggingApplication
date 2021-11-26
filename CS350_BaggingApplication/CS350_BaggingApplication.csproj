@@ -172,9 +172,11 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BaggingOptionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\IBaggingAlgorithm.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Models\SimpleBaggingAlgorithm.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
