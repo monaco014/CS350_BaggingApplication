@@ -22,12 +22,18 @@
                 <tr>
                     <td>@item.Name</td>
                     <td>@item.Weight</td>
-                    <td><input id="Quantities" name="Quantities" type="number" value="0"/></td>
+                    <td><input id="Quantities" name="Quantities" type="number" value="0" /></td>
                 </tr>
             }
         </tbody>
     </table>
 
-<button class="btn btn-primary">Calculate</button>
+    <button class="btn btn-primary">Calculate</button>
 }
 
+@section scripts
+{
+    <script>
+        $(document).ready(() => $(".table").DataTable())
+    </script>
+}
