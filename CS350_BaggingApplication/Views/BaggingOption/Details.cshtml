@@ -1,0 +1,34 @@
+﻿@model CS350_BaggingApplication.Models.Packaging
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Package Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Package</th>
+            <th>About</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Name</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>Weight Limit in Pounds</td>
+            <td>@Model.WeightCapacity</td>
+        </tr>
+        <tr>
+            <td>Item Limit</td>
+            <td>@Model.HardItemLimit</td>
+        </tr>
+        <tr>
+            <td>Size in Inches</td>
+            <td>@Model.Height X @Model.Width X @Model.Length</td>
+        </tr>
+    </tbody>
+</table>

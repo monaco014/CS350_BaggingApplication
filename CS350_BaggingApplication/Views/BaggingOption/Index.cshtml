@@ -11,7 +11,8 @@
             <th>Name</th>
             <th>Max Weight</th>
             <th>Item Limit</th>
-            <th>Dimentions</th>
+            <th>Dimensions</th>
+            <th>Details</th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
                 <td>@pack.WeightCapacity</td>
                 <td>@pack.HardItemLimit</td>
                 <td>@pack.Height X @pack.Width X @pack.Length</td>
+                <td>@Html.ActionLink("Details", "Details", "BaggingOption", new {id = pack.Id}, new { @class = "btn btn-default"})</td>
             </tr>
         }
     </tbody>

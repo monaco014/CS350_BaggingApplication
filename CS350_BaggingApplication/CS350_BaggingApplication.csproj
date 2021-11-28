@@ -560,12 +560,15 @@
     <Content Include="Views\Admin\SaveItem.cshtml" />
     <Content Include="Views\Admin\NewPackaging.cshtml" />
     <Content Include="Views\Admin\SavePackaging.cshtml" />
-    <Content Include="Views\BaggingOption\Index.cshtml" />
     <Content Include="Views\Order\CalculateOrder.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Admin\EditItem.cshtml" />
     <Content Include="Views\Admin\Item.cshtml" />
     <Content Include="Views\Item\Details.cshtml" />
+    <Content Include="Views\Admin\Packaging.cshtml" />
+    <Content Include="Views\BaggingOption\Index.cshtml" />
+    <Content Include="Views\Admin\EditPackaging.cshtml" />
+    <Content Include="Views\BaggingOption\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

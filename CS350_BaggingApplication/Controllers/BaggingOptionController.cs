@@ -39,12 +39,12 @@ namespace CS350_BaggingApplication.Controllers
 
         public ActionResult Details(int id)
         {
-            var pack = _context.Items.FirstOrDefault(i => i.Id == id);
+            var package = _context.Packaging.FirstOrDefault(i => i.Id == id);
 
-            if (pack == null)
+            if (package == null)
                 return HttpNotFound();
 
-            return Content(pack.Name);
+            return View(package);
         }
 
     }

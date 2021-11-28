@@ -114,6 +114,21 @@ namespace CS350_BaggingApplication.Controllers
             return View();
         }
 
+
+        public ActionResult Packaging()
+        {
+            var packages = _context.Packaging.ToList();
+
+            var model = new PackagingViewModel()
+            {
+                Packaging = packages
+            };
+
+            _context.Dispose();
+
+            return View(model);
+        }
+
         public ActionResult NewPackaging()
         {
             var model = new PackagingFormViewModel()
@@ -122,6 +137,17 @@ namespace CS350_BaggingApplication.Controllers
             };
             return View(model);
         }
+
+        public ActionResult EditPackaging(int id)
+        {
+            var package = _context.Packaging.SingleOrDefault(i => i.Id == id);
+
+            if (package is null)
+                return HttpNotFound();
+
+            return View(new PackagingFormViewModel(package));
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -133,10 +159,44 @@ namespace CS350_BaggingApplication.Controllers
                 return View("NewPackaging", model);
             }
 
-            _context.Packaging.Add(packaging);
+            if (packaging.Id == 0)
+            {
+                _context.Packaging.Add(packaging);
+            }
+            else
+            {
+                var dbPackage = _context.Packaging.SingleOrDefault(i => i.Id == packaging.Id);
+                dbPackage.Id = packaging.Id;
+                dbPackage.Name = packaging.Name;
+                dbPackage.WeightCapacity = packaging.WeightCapacity;
+                dbPackage.HardItemLimit = packaging.HardItemLimit;
+                dbPackage.Length = packaging.Length;
+                dbPackage.Height = packaging.Height;
+                dbPackage.Width = packaging.Width;
+            }
+
             _context.SaveChanges();
 
             return View();
+        }
+
+        public ActionResult DeletePackaging(int id)
+        {
+            var package = _context.Packaging.SingleOrDefault(i => i.Id == id);
+            if (package is null)
+                return HttpNotFound();
+
+            _context.Packaging.Remove(package);
+
+            _context.SaveChanges();
+
+            var packaging = _context.Packaging.ToList();
+            var model = new PackagingViewModel()
+            {
+                Packaging = packaging
+            };
+
+            return View("Packaging", model);
         }
     }
 }

@@ -1,0 +1,43 @@
+﻿@model CS350_BaggingApplication.ViewModels.PackagingViewModel
+@{
+    ViewBag.Title = "Admin Bagging Options";
+}
+
+<h2>Stored Packaging Types</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Max Weight</th>
+            <th>Item Limit</th>
+            <th>Dimensions</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pack in Model.Packaging)
+        {
+            <tr>
+                <td>@pack.Id</td>
+                <td>@pack.Name</td>
+                <td>@pack.WeightCapacity</td>
+                <td>@pack.HardItemLimit</td>
+                <td>@pack.Height X @pack.Width X @pack.Length</td>
+                <td>@Html.ActionLink("Details", "Details", "BaggingOption", new {id = pack.Id}, new { @class = "btn btn-default"})</td>
+                <td>@Html.ActionLink("Edit", "EditPackaging", "Admin", new { id = pack.Id }, new { @class = "btn btn-default" })</td>
+                <td>@Html.ActionLink("Delete", "DeletePackaging", "Admin", new { id = pack.Id }, new { @class = "btn btn-danger" })</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section scripts
+{
+    <script>
+        $(document).ready(() => $(".table").DataTable())
+    </script>
+}
