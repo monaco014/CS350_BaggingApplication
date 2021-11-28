@@ -12,28 +12,40 @@ namespace CS350_BaggingApplication.ViewModels
         public int? Id { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string Name { get; set; }
         
         public string Description { get; set; }
 
 
         [Required]
-        public int Length { get; set; }
+        [Display(Name = "Length in inches")]
+        [Range(1, 1000)]
+        public int? Length { get; set; }
         
         [Required]
-        public int Height { get; set; }
+        [Display(Name = "Height in inches")]
+        [Range(1, 1000)]
+        public int? Height { get; set; }
         
         [Required]
-        public int Width { get; set; }
+        [Display(Name = "Width in inches")]
+        [Range(1, 1000)]
+        public int? Width { get; set; }
 
         [Required]
-        public int Weight { get; set; }
+        [Display(Name = "Weight in pounds")]
+        [Range(1, 1000)]
+        public int? Weight { get; set; }
 
         [Required]
-        public int Quantity { get; set; }
-        
+        [Display(Name = "Quantity")]
+        [Range(1, 100)]
+        public int? Quantity { get; set; }
+
         [Required]
-        public int Price { get; set; }
+        [Range(1, 1000000)] 
+        public int? Price { get; set; }
 
         public ItemFormViewModel()
         {

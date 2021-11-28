@@ -15,19 +15,29 @@ namespace CS350_BaggingApplication.ViewModels
         public string Name { get; set; }
 
         [Required]
-        public int Length { get; set; }
+        [Display (Name = "Length in Inches")]
+        [Range(1, 1000)]
+        public int? Length { get; set; }
 
         [Required]
-        public int Height { get; set; }
+        [Display(Name = "Height in Inches")]
+        [Range(1, 1000)]
+        public int? Height { get; set; }
 
         [Required]
-        public int Width { get; set; }
+        [Display(Name = "Width in Inches")]
+        [Range(1, 1000)]
+        public int? Width { get; set; }
 
         [Required]
-        public int WeightCapacity { get; set; }
+        [Display(Name = "Weight Capacity in Pounds")]
+        [Range(1, 1000)]
+        public int? WeightCapacity { get; set; }
 
         [Required]
-        public int HardItemLimit { get; set; }
+        [Display(Name = "Item Limit")]
+        [Range(1, 100)]
+        public int? HardItemLimit { get; set; }
 
         public PackagingFormViewModel()
         {

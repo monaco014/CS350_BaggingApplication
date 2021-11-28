@@ -17,6 +17,10 @@ namespace CS350_BaggingApplication.Controllers
             _context = new ApplicationDbContext();
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         // GET: Admin
         public ActionResult Index()
@@ -27,16 +31,18 @@ namespace CS350_BaggingApplication.Controllers
         public ActionResult NewItem()
         {
             var model = new ItemFormViewModel()
-            { 
-                Id = 0
+            {
+                Id = 0,
+                Name = null
             };
             return View(model); 
         }
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult SaveItem(Item item)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || string.IsNullOrWhiteSpace(item.Name))
             {
                 var model = new ItemFormViewModel(item);
                 return View("NewItem", model);
@@ -45,11 +51,6 @@ namespace CS350_BaggingApplication.Controllers
             _context.Items.Add(item);
             _context.SaveChanges();
 
-            return View("CreatedItem");
-        }
-
-        public ActionResult CreatedItem()
-        {
             return View();
         }
 
@@ -63,24 +64,19 @@ namespace CS350_BaggingApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult SavePackaging(Packaging pack)
+        [ValidateAntiForgeryToken]
+        public ActionResult SavePackaging(Packaging packaging)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || string.IsNullOrWhiteSpace(packaging.Name))
             {
-                var model = new PackagingFormViewModel(pack);
-                return View("Newpackaging", model);
+                var model = new PackagingFormViewModel(packaging);
+                return View("NewPackaging", model);
             }
 
-            _context.Packaging.Add(pack);
+            _context.Packaging.Add(packaging);
             _context.SaveChanges();
 
-            return View("CreatedPackaging");
-        }
-
-        public ActionResult CreatedPackaging()
-        {
             return View();
         }
-
     }
 }

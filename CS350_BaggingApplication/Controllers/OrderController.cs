@@ -37,8 +37,20 @@ namespace CS350_BaggingApplication.Controllers
         public ActionResult CalculateOrder(List<int> quantities)
         {
             if (quantities is null)
+                return View("Index");
+
+            foreach (var item in quantities)
             {
-                return View();
+                if (item < 0)
+                {
+                    var indexModel = new CalculateOrderViewModel()
+                    {
+                        Items = _context.Items.ToList(),
+                        Quantities = new List<int>()
+                    };
+
+                    return View("Index", indexModel);
+                }
             }
 
             Dictionary<Item, int> dict = ConvertToItemQuantityDictionary(quantities);
@@ -69,7 +81,7 @@ namespace CS350_BaggingApplication.Controllers
             {
                 if (item.Value != 0)
                 {
-                    totalWeight += item.Key.Weight;
+                    totalWeight += item.Key.Weight * item.Value;
                 }
             }
 

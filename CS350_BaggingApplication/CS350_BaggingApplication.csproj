@@ -557,9 +557,9 @@
     <Content Include="Views\Item\Index.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\NewItem.cshtml" />
-    <Content Include="Views\Admin\CreatedItem.cshtml" />
+    <Content Include="Views\Admin\SaveItem.cshtml" />
     <Content Include="Views\Admin\NewPackaging.cshtml" />
-    <Content Include="Views\Admin\CreatedPackaging.cshtml" />
+    <Content Include="Views\Admin\SavePackaging.cshtml" />
     <Content Include="Views\BaggingOption\Index.cshtml" />
     <Content Include="Views\Order\CalculateOrder.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />

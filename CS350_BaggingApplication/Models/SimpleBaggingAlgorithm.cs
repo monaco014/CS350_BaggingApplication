@@ -13,7 +13,7 @@ public class SimpleBaggingAlgorithm : IBaggingAlgorithm
             if (item.Value != 0)
             {
                 totalItems += item.Value;
-                totalWeight += item.Key.Weight;
+                totalWeight += item.Key.Weight * item.Value;
             }
         }
 
