@@ -10,7 +10,7 @@
 {
     <div class="form-group">
         @Html.LabelFor(item => item.Name)
-        @Html.TextBoxFor(item => item.Name, new { @class = "form-control"})
+        @Html.TextBoxFor(item => item.Name, new { @class = "form-control" })
         @Html.ValidationMessageFor(item => item.Name)
     </div>
     <div class="form-group">
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(item => item.Height)
-        @Html.TextBoxFor(item => item.Height, new { @class = "form-control", @type = "number"})
+        @Html.TextBoxFor(item => item.Height, new { @class = "form-control", @type = "number" })
         @Html.ValidationMessageFor(item => item.Height)
     </div>
     <div class="form-group">
@@ -48,6 +48,7 @@
         @Html.ValidationMessageFor(item => item.Price)
     </div>
     @Html.HiddenFor(item => item.Id)
+    @Html.AntiForgeryToken()
     <button class="btn btn-primary">Create</button>
 
 }

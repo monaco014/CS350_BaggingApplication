@@ -7,19 +7,21 @@
 
 <table class="table">
     <thead>
-    <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Quantity</th>
-    </tr>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Weight</th>
+            <th>Details</th>
+        </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Items)
         {
         <tr>
-            <td>@item.Id</td>
             <td>@item.Name</td>
             <td>@item.Quantity</td>
+            <td>@item.Weight</td>
+            <td>@Html.ActionLink("Details", "Details", "Item", new { Id = item.Id }, new { @class = "btn btn-default" })</td>
         </tr>
         }
     </tbody>

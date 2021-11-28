@@ -44,7 +44,7 @@ namespace CS350_BaggingApplication.Controllers
             if (item == null)
                 return HttpNotFound();
 
-            return Content(item.Name);
+            return View(item);
         }
 
     }

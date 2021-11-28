@@ -39,6 +39,7 @@
         @Html.ValidationMessageFor(pack => pack.Length)
     </div>
     @Html.HiddenFor(pack => pack.Id)
+    @Html.AntiForgeryToken()
     <button class="btn btn-primary">Create</button>
 
 }

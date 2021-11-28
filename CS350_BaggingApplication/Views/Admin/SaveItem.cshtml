@@ -1,11 +1,11 @@
 ﻿
 @{
-    ViewBag.Title = "CreatedItem";
+    ViewBag.Title = "Item Saved";
 }
 
-<h2>Item was Created</h2>
+<h2>Item was Saved</h2>
 
-@Html.ActionLink("Add Another Item", "newItem")
-@Html.ActionLink("View Items", "index", "item")
-@Html.ActionLink("Admin Control Panel", "Index")
+@Html.ActionLink("Add Another Item", "NewItem", null, new { @class = "btn btn-default" } )
+@Html.ActionLink("View Items", "Item", "Admin", null, new { @class = "btn btn-default" })
+@Html.ActionLink("Admin Control Panel", "Index", null, new { @class = "btn btn-default" })
 

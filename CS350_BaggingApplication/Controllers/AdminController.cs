@@ -28,6 +28,20 @@ namespace CS350_BaggingApplication.Controllers
             return View();
         }
 
+        public ActionResult Item()
+        {
+            var items = _context.Items.ToList();
+
+            var model = new ItemViewModel()
+            {
+                Items = items
+            };
+
+            _context.Dispose();
+
+            return View(model);
+        }
+
         public ActionResult NewItem()
         {
             var model = new ItemFormViewModel()
@@ -36,6 +50,35 @@ namespace CS350_BaggingApplication.Controllers
                 Name = null
             };
             return View(model); 
+        }
+
+        public ActionResult EditItem(int id)
+        {
+            var item = _context.Items.SingleOrDefault(i => i.Id == id);
+
+            if (item is null)
+                return HttpNotFound();
+
+            return View(new ItemFormViewModel(item));
+        }
+
+        public ActionResult DeleteItem(int id)
+        {
+            var item = _context.Items.SingleOrDefault(i => i.Id == id);
+            if (item is null)
+                return HttpNotFound();
+
+            _context.Items.Remove(item);
+
+            _context.SaveChanges();
+
+            var items = _context.Items.ToList();
+            var model = new ItemViewModel()
+            {
+                Items = items
+            };
+
+            return View("Item", model);
         }
         
         [HttpPost]
@@ -48,7 +91,24 @@ namespace CS350_BaggingApplication.Controllers
                 return View("NewItem", model);
             }
 
-            _context.Items.Add(item);
+            if (item.Id == 0)
+            {
+                _context.Items.Add(item);
+            }
+            else
+            {
+                var dbItem = _context.Items.SingleOrDefault(i => i.Id == item.Id);
+                dbItem.Id = item.Id;
+                dbItem.Name = item.Name;
+                dbItem.Description = item.Description;
+                dbItem.Length = item.Length;
+                dbItem.Height = item.Height;
+                dbItem.Width = item.Width;
+                dbItem.Weight = item.Weight;
+                dbItem.Quantity = item.Quantity;
+                dbItem.Price = item.Price;
+            }
+
             _context.SaveChanges();
 
             return View();

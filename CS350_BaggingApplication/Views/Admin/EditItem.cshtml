@@ -1,0 +1,54 @@
+﻿@model CS350_BaggingApplication.ViewModels.ItemFormViewModel
+
+@{
+    ViewBag.Title = "Edit Item";
+}
+
+<h2>Edit Item</h2>
+
+@using (Html.BeginForm("SaveItem", "Admin"))
+{
+    <div class="form-group">
+        @Html.LabelFor(item => item.Name)
+        @Html.TextBoxFor(item => item.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(item => item.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Description)
+        @Html.TextBoxFor(item => item.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Length)
+        @Html.TextBoxFor(item => item.Length, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(item => item.Length)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Height)
+        @Html.TextBoxFor(item => item.Height, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(item => item.Height)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Width)
+        @Html.TextBoxFor(item => item.Width, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(item => item.Width)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Weight)
+        @Html.TextBoxFor(item => item.Weight, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(item => item.Weight)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Quantity)
+        @Html.TextBoxFor(item => item.Quantity, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(item => item.Quantity)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(item => item.Price)
+        @Html.TextBoxFor(item => item.Price, new { @class = "form-control", @type = "number" })
+        @Html.ValidationMessageFor(item => item.Price)
+    </div>
+    @Html.HiddenFor(item => item.Id)
+    @Html.AntiForgeryToken()
+    <button class="btn btn-primary">Edit</button>
+
+}
