@@ -22,7 +22,7 @@
         <tr>
             <td>@item.Id</td>
             <td>@item.Name</td>
-            <td>@item.Quantity</td>
+            <td>@item.Quantity Pieces</td>
             <td>@Html.ActionLink("Details", "Details", "Item", new { Id = item.Id }, new { @class = "btn btn-default" })</td>
             <td>@Html.ActionLink("Edit", "EditItem", new { Id = item.Id }, new { @class = "btn btn-default" })</td>
             <td>@Html.ActionLink("Delete", "DeleteItem", new { Id = item.Id }, new { @class = "btn btn-danger" })</td>
