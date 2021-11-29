@@ -27,34 +27,39 @@ namespace CS350_BaggingApplication.Controllers
             var model = new CalculateOrderViewModel()
             {
                 Items = _context.Items.ToList(),
-                Quantities = new List<int>()
+                Packages = _context.Packaging.ToList(),
+                Quantities = new List<int>(),
+                PackageId = 0
             };
 
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult CalculateOrder(List<int> quantities)
+        public ActionResult CalculateOrder(Order order)
         {
-            if (quantities is null)
-                return View("Index");
+            var indexModel = new CalculateOrderViewModel()
+            {
+                Items = _context.Items.ToList(),
+                Quantities = new List<int>()
+            };
 
-            foreach (var item in quantities)
+            if (order.Quantities is null)
+                return View("Index", indexModel);
+
+            foreach (var item in order.Quantities)
             {
                 if (item < 0)
                 {
-                    var indexModel = new CalculateOrderViewModel()
-                    {
-                        Items = _context.Items.ToList(),
-                        Quantities = new List<int>()
-                    };
-
                     return View("Index", indexModel);
                 }
             }
+            Dictionary<Item, int> dict = ConvertToItemQuantityDictionary(order.Quantities);
 
-            Dictionary<Item, int> dict = ConvertToItemQuantityDictionary(quantities);
-            Packaging packagingType = _context.Packaging.First();
+
+            Packaging packagingType = _context.Packaging.SingleOrDefault(p => p.Id == order.PackageId);
+            if (packagingType is null)
+                return View("Index", indexModel);
 
             IBaggingAlgorithm baggingAlgorithm = new SimpleBaggingAlgorithm();
             int neededBags = baggingAlgorithm.GetNumberOfNeededBags(dict, packagingType);

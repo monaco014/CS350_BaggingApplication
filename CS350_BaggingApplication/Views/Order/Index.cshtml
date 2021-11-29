@@ -27,6 +27,12 @@
             }
         </tbody>
     </table>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.PackageId)
+        @Html.DropDownListFor(m => m.PackageId, new SelectList(Model.Packages, "Id", "Name"), null, new { @class="form-control" })
+    </div>
+
     <button class="btn btn-primary">Calculate</button>
 }
 
