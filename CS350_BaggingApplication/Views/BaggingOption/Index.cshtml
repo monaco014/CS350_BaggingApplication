@@ -20,8 +20,8 @@
         {
             <tr>
                 <td>@pack.Name</td>
-                <td>@pack.WeightCapacity</td>
-                <td>@pack.HardItemLimit</td>
+                <td>@pack.WeightCapacity lbs</td>
+                <td>@pack.HardItemLimit Pieces</td>
                 <td>@pack.Height X @pack.Width X @pack.Length</td>
                 <td>@Html.ActionLink("Details", "Details", "BaggingOption", new {id = pack.Id}, new { @class = "btn btn-default"})</td>
             </tr>
