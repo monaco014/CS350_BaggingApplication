@@ -217,6 +217,10 @@
     <Compile Include="Controllers\Api\ItemController.cs" />
     <Compile Include="Controllers\BaggingOptionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Migrations\202111290021067_SeedUsers.cs" />
+    <Compile Include="Migrations\202111290021067_SeedUsers.designer.cs">
+      <DependentUpon>202111290021067_SeedUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\IBaggingAlgorithm.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -593,6 +597,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111222159424_Packaging.resx">
       <DependentUpon>202111222159424_Packaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111290021067_SeedUsers.resx">
+      <DependentUpon>202111290021067_SeedUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

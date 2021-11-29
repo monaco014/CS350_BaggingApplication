@@ -448,3 +448,4 @@ C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingAppl
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\bin\System.Net.Http.Formatting.xml
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\bin\System.Web.Http.xml
 C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\bin\System.Web.Http.WebHost.xml
+C:\Users\Dom52\Source\Repos\monaco014\CS350_BaggingApplication\CS350_BaggingApplication\obj\Debug\CS350_BaggingApplication.Migrations.SeedUsers.resources

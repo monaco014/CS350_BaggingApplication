@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CS350_BaggingApplication.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         ApplicationDbContext _context;
