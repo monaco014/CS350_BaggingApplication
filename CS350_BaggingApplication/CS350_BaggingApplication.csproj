@@ -221,6 +221,10 @@
     <Compile Include="Migrations\202111290021067_SeedUsers.designer.cs">
       <DependentUpon>202111290021067_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112021722146_updateDataTyeps.cs" />
+    <Compile Include="Migrations\202112021722146_updateDataTyeps.designer.cs">
+      <DependentUpon>202112021722146_updateDataTyeps.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\IBaggingAlgorithm.cs" />
     <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -601,6 +605,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111290021067_SeedUsers.resx">
       <DependentUpon>202111290021067_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112021722146_updateDataTyeps.resx">
+      <DependentUpon>202112021722146_updateDataTyeps.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

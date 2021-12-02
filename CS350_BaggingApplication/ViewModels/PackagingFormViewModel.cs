@@ -17,22 +17,22 @@ namespace CS350_BaggingApplication.ViewModels
         [Required]
         [Display (Name = "Length in Inches")]
         [Range(1, 1000)]
-        public int? Length { get; set; }
+        public double? Length { get; set; }
 
         [Required]
         [Display(Name = "Height in Inches")]
         [Range(1, 1000)]
-        public int? Height { get; set; }
+        public double? Height { get; set; }
 
         [Required]
         [Display(Name = "Width in Inches")]
         [Range(1, 1000)]
-        public int? Width { get; set; }
+        public double? Width { get; set; }
 
         [Required]
         [Display(Name = "Weight Capacity in Pounds")]
         [Range(1, 1000)]
-        public int? WeightCapacity { get; set; }
+        public double? WeightCapacity { get; set; }
 
         [Required]
         [Display(Name = "Item Limit")]

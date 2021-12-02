@@ -64,7 +64,7 @@ namespace CS350_BaggingApplication.Controllers
             IBaggingAlgorithm baggingAlgorithm = new SimpleBaggingAlgorithm();
             int neededBags = baggingAlgorithm.GetNumberOfNeededBags(dict, packagingType);
 
-            int totalWeight = GetTotalWeight(dict);
+            double totalWeight = GetTotalWeight(dict);
             int totalItems = GetTotalItems(dict);
 
             var model = new CalculateOrderResultViewModel
@@ -79,9 +79,9 @@ namespace CS350_BaggingApplication.Controllers
             return View(model);
         }
 
-        private static int GetTotalWeight(Dictionary<Item, int> dict)
+        private static double GetTotalWeight(Dictionary<Item, int> dict)
         {
-            int totalWeight = 0;
+            double totalWeight = 0;
             foreach (var item in dict)
             {
                 if (item.Value != 0)

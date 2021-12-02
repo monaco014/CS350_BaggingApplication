@@ -21,22 +21,22 @@ namespace CS350_BaggingApplication.ViewModels
         [Required]
         [Display(Name = "Length in inches")]
         [Range(1, 1000)]
-        public int? Length { get; set; }
+        public double? Length { get; set; }
         
         [Required]
         [Display(Name = "Height in inches")]
         [Range(1, 1000)]
-        public int? Height { get; set; }
+        public double? Height { get; set; }
         
         [Required]
         [Display(Name = "Width in inches")]
         [Range(1, 1000)]
-        public int? Width { get; set; }
+        public double? Width { get; set; }
 
         [Required]
         [Display(Name = "Weight in pounds")]
         [Range(1, 1000)]
-        public int? Weight { get; set; }
+        public double? Weight { get; set; }
 
         [Required]
         [Display(Name = "Quantity")]
@@ -45,7 +45,7 @@ namespace CS350_BaggingApplication.ViewModels
 
         [Required]
         [Range(1, 1000000)] 
-        public int? Price { get; set; }
+        public double? Price { get; set; }
 
         public ItemFormViewModel()
         {
