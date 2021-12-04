@@ -15,7 +15,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(pack => pack.WeightCapacity)
-        @Html.TextBoxFor(pack => pack.WeightCapacity, new { @class = "form-control", @type = "number" })
+        @Html.TextBoxFor(pack => pack.WeightCapacity, new { @class = "form-control", @type = "number", step = "0.01" })
         @Html.ValidationMessageFor(pack => pack.WeightCapacity)
     </div>
     <div class="form-group">
@@ -25,17 +25,17 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(pack => pack.Height)
-        @Html.TextBoxFor(pack => pack.Height, new { @class = "form-control", @type = "number" })
+        @Html.TextBoxFor(pack => pack.Height, new { @class = "form-control", @type = "number", step = "0.01" })
         @Html.ValidationMessageFor(pack => pack.Height)
     </div>
     <div class="form-group">
         @Html.LabelFor(pack => pack.Width)
-        @Html.TextBoxFor(pack => pack.Width, new { @class = "form-control", @type = "number" })
+        @Html.TextBoxFor(pack => pack.Width, new { @class = "form-control", @type = "number", step = "0.01" })
         @Html.ValidationMessageFor(pack => pack.Width)
     </div>
     <div class="form-group">
         @Html.LabelFor(pack => pack.Length)
-        @Html.TextBoxFor(pack => pack.Length, new { @class = "form-control", @type = "number" })
+        @Html.TextBoxFor(pack => pack.Length, new { @class = "form-control", @type = "number", step = "0.01" })
         @Html.ValidationMessageFor(pack => pack.Length)
     </div>
     @Html.HiddenFor(pack => pack.Id)
