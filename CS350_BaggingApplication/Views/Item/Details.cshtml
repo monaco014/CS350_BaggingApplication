@@ -23,7 +23,8 @@
             @if (string.IsNullOrWhiteSpace(Model.Description))
             {
                 <td>This item does not have a description.</td>
-            } else
+            }
+            else
             {
                 <td>@Model.Description</td>
             }
@@ -32,6 +33,10 @@
         <tr>
             <td>Quantity</td>
             <td>@Model.Quantity Pieces</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>@string.Format("{0:C}", Model.Price)</td>
         </tr>
         <tr>
             <td>Weight</td>

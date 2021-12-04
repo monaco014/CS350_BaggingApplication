@@ -12,6 +12,7 @@ namespace CS350_BaggingApplication.ViewModels
         public Packaging PackagingUsed { get; set; }
         public double TotalWeight { get; set; }
         public int TotalItems { get; set; }
+        public double TotalPrice { get; set; }
         public int BagsNeeded { get; set; }
     }
 }

@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.order-table {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .order-table {
+        grid-template-columns: 100%;
+    }
+}

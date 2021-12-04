@@ -12,6 +12,7 @@
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Price</th>
                 <th>Weight</th>
                 <th>Quantity</th>
             </tr>
@@ -21,6 +22,7 @@
             {
                 <tr>
                     <td>@item.Name</td>
+                    <td>@string.Format("{0:C}", item.Price)</td>
                     <td>@item.Weight</td>
                     <td><input id="Quantities" name="Quantities" type="number" value="0" /></td>
                 </tr>

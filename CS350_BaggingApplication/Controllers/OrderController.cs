@@ -66,12 +66,14 @@ namespace CS350_BaggingApplication.Controllers
 
             double totalWeight = GetTotalWeight(dict);
             int totalItems = GetTotalItems(dict);
+            double totalPrice = dict.Sum(m => m.Key.Price * m.Value);
 
             var model = new CalculateOrderResultViewModel
             {
                 TotalItems = totalItems,
                 TotalWeight = totalWeight,
                 Items = dict,
+                TotalPrice = totalPrice,
                 PackagingUsed = packagingType,
                 BagsNeeded = neededBags
             };

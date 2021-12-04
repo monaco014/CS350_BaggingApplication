@@ -44,6 +44,7 @@ namespace CS350_BaggingApplication.ViewModels
         public int? Quantity { get; set; }
 
         [Required]
+        [Display(Name = "Price in USD $")]
         [Range(1, 1000000)] 
         public double? Price { get; set; }
 
